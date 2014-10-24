@@ -1,12 +1,12 @@
 class SimpleSelection
-	attr_reader :ask, :answer
+	attr_reader :ask
 
-	def initialize(ask, answer)
+	def initialize(ask, answers)
 		@ask = ask
-		@answer = answer
+		@answers = answers
 	end
 
-	def answer
-		"a) #{@answer[0]}\nb) #{@answer[1]}\nc) #{@answer[2]}\nd) #{@answer[3]}\n"
+	def answers_to_s
+		"a) #{@answers[0]}\nb) #{@answers[1]}\nc) #{@answers[2]}\nd) #{@answers[3]}\n"
 	end
 end

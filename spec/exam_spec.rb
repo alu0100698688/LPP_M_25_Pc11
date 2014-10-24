@@ -14,7 +14,12 @@ describe Examen do
     end
 
     it "Se almacenan correctamente las respuestas." do
-        @p1.myQuestion.answer.should eq("a) azul\nb) verde\nc) negro\nd) naranja\n")
+        @p1.myQuestion.answers_to_s.should eq("a) azul\nb) verde\nc) negro\nd) naranja\n")
     end
   end
+  describe "# Obtencion respuestas" do
+    it "Array de opciones" do
+      @p1.myQuestion.answers.should eq(["azul","verde","negro","naranja"])
+    end
+  end 
 end
