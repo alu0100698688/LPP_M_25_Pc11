@@ -29,7 +29,7 @@ describe Examen do
        @sS1.to_s.should eq("¿De qué color es el coche del presidente?\n a)azul\n b)verde\n c)negro\n d)naranja\n")
     end  
     it "Preguntas y respuestas de examen" do
-       @p1.to_s.should eq("¿De qué color es el coche del presidente?\n a)azul\n b)verde\n c)negro\n d)naranja\n ¿Que es un perro?\n a)Un ave\n b)Un reptil\n c)Un mamifero\n d)Ninguna de las anteriores\n")
+       @p1.to_s.should eq("¿De qué color es el coche del presidente?\n a)azul\n b)verde\n c)negro\n d)naranja\n¿Que es un perro?\n a)Un ave\n b)Un reptil\n c)Un mamifero\n d)Ninguna de las anteriores\n")
     end
   end
 end
