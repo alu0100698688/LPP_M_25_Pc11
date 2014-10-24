@@ -7,6 +7,6 @@ class SimpleSelection
 	end
 
 	def answers_to_s
-		"a) #{@answers[0]}\nb) #{@answers[1]}\nc) #{@answers[2]}\nd) #{@answers[3]}\n"
+		"a)#{@answers[0]}\n b)#{@answers[1]}\n c)#{@answers[2]}\n d)#{@answers[3]}\n"
 	end
 end
