@@ -1,1 +1,1 @@
-require "lib/exam.rb"
+require "lib/examen.rb"
