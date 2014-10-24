@@ -1,5 +1,5 @@
 class SimpleSelection
-	attr_reader :ask
+	attr_reader :ask,:answers
 
 	def initialize(ask, answers)
 		@ask = ask
