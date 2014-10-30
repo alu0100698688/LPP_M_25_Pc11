@@ -23,6 +23,10 @@ describe Examen do
     @nodo1 = Node.new
     @nodo1[:value] = 2
     @nodo1[:next] = nil
+    @nodo2 = Node.new
+    @nodo2[:value] = 5
+    @nodo2[:next] = nil
+    @arrayNodos = [@nodo1,@nodo2]
     @nodoCabeza = Node.new
     @nodoCabeza[:value] = 3
     @nodoCabeza[:next] = nil
@@ -64,6 +68,11 @@ describe Examen do
        nodoInsertado = @lista1.insert(@nodo1)
        nodoInsertado[:value].should eq (2)
        nodoInsertado[:next].should eq (nil)
+    end
+    it "#Insertar varios elementos" do
+       ultimoNodoInsertado = @lista1.insertElements(@arrayNodos)
+       ultimoNodoInsertado[:value].should eq(5)
+       ultimoNodoInsertado[:next].should eq(nil)
     end
   end
 end
