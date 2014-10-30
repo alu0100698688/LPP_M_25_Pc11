@@ -20,7 +20,9 @@ describe Examen do
     @questions =[@sS1,@sS2] 
     @p1 = Examen.new(@questions)
     #Listas enlazadas
-    
+    @nodoCabeza = Node.new
+    @nodoCabeza[:value] = 3
+    @nodoCabeza[:next] = nil
     @lista1 = List.new(@nodoCabeza)
   end  
 
