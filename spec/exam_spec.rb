@@ -77,7 +77,9 @@ describe Examen do
   end
   describe "#Recoger información nodos" do
     it "#Recoger cabeza de la cola" do
-      @lista1.cabeza.should eq (@cabeza)
+      nodoCabeza = @lista1.cabeza
+      nodoCabeza[:value].should eq (3)
+      nodoCabeza[:next].should eq (nil)
     end
   end
 end
