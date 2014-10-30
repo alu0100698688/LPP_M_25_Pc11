@@ -7,5 +7,16 @@ class List
    def pullHead
       @cabeza = @cabeza[:next]
    end
+   def insert(node)
+      actual = @cabeza
+      siguiente = @cabeza[:next]
+      while siguiente != nil
+          actual = siguiente
+          siguiente = actual[:next]
+      end
+      actual[:next] = node
+       
+      actual[:next]
+   end
     
 end
