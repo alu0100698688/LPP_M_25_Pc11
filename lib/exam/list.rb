@@ -1,5 +1,6 @@
 require_relative "node.rb"
 class List
+   attr_reader :cabeza
    def initialize(nodoCabeza)
        @cabeza = nodoCabeza
    end
