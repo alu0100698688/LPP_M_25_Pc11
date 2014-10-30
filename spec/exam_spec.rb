@@ -75,4 +75,9 @@ describe Examen do
        ultimoNodoInsertado[:next].should eq(nil)
     end
   end
+  describe "#Recoger información nodos" do
+    it "#Recoger cabeza de la cola" do
+      @lista1.cabeza.should eq (@cabeza)
+    end
+  end
 end
