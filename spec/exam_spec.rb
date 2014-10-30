@@ -20,6 +20,9 @@ describe Examen do
     @questions =[@sS1,@sS2] 
     @p1 = Examen.new(@questions)
     #Listas enlazadas
+    @nodo1 = Node.new
+    @nodo1[:value] = 2
+    @nodo1[:next] = nil
     @nodoCabeza = Node.new
     @nodoCabeza[:value] = 3
     @nodoCabeza[:next] = nil
@@ -53,6 +56,14 @@ describe Examen do
   describe "#Extracción de elementos" do
     it "#Extraer el primer elemento" do
        @lista1.pullHead.should eq (nil)
+    end
+  end
+  describe "#Inserción de elementos" do
+    it "#Insertar un elemento" do
+       
+       nodoInsertado = @lista1.insert(@nodo1)
+       nodoInsertado[:value].should eq (2)
+       nodoInsertado[:next].should eq (nil)
     end
   end
 end
