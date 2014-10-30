@@ -56,6 +56,62 @@ describe Examen do
        @p1.to_s.should eq("¿De qué color es el coche del presidente?\na)azul\nb)verde\nc)negro\nd)naranja\n¿Que es un perro?\na)Un ave\nb)Un reptil\nc)Un mamifero\nd)Ninguna de las anteriores\n")
     end
   end
+  #Prueba de las preguntas de la práctica 6
+  describe "#Comprobación preguntas y respuestas" do
+    it "#Comprobación pregunta 1" do
+      enunciado = "¿Cuál es la salida del siguiente código Ruby? class Xyz\ndef pots\n@nice\nend\nend\nxyz = Xyz.new\np xyz.pots"
+      opciones ={
+        "a" => "#<Xyz:0xa000208>",
+        "b" => "nil",
+        "c" => "0",
+        "d" => "Ninguna de las anteriores"
+      }
+      pregunta1 = SimpleSelection.new(enunciado,opciones)
+      pregunta1.to_s.should eq("¿Cuál es la salida del siguiente código Ruby? class Xyz\ndef pots\n@nice\nend\nend\nxyz = Xyz.new\np xyz.pots\na)#<Xyz:0xa000208>\nb)nil\nc)0\nd)Ninguna de las anteriores\n")
+    end
+    it "#Comprobación pregunta 2" do
+      enunciado = "La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}"
+      opciones = {
+        "a" => "Cierto",
+        "b" => "Falso"
+      }
+      pregunta2 = SimpleSelection.new(enunciado,opciones)
+      pregunta2.to_s.should eq ("La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}\na)Cierto\nb)Falso\n")
+    end
+    it "#Comprobación pregunta 3" do
+      enunciado = "¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n"
+      opciones = {
+        "a" => "1",
+        "b" => "bob",
+        "c" => "HEY!",
+        "d" => "Ninguna de las anteriores"
+      }
+      pregunta3 = SimpleSelection.new(enunciado,opciones)
+      pregunta3.to_s.should eq ("¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n\na)1\nb)bob\nc)HEY!\nd)Ninguna de las anteriores\n")
+    end
+    it "#Comprobación pregunta 4" do
+      enunciado = "¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n"
+      opciones ={
+        "a" => "Una instancia de la clase Class",
+        "b" => "Una constante",
+        "c" => "Un objeto",
+        "d" => "Ninguna de las anteriores"
+        
+      }
+      pregunta4 = SimpleSelection.new(enunciado,opciones)
+      pregunta4.to_s.should eq("¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n\na)Una instancia de la clase Class\nb)Una constante\nc)Un objeto\nd)Ninguna de las anteriores\n")
+    end
+    it "#Comprobación pregunta 5" do
+      enunciado = "Es apropiado que una clase Tablero herede de una clase Juego\n"
+      opciones ={
+        "a" => "Cierto",
+        "b" => "Falso"
+      }
+      pregunta5 = SimpleSelection.new(enunciado,opciones)
+      pregunta5.to_s.should eq("Es apropiado que una clase Tablero herede de una clase Juego\n\na)Cierto\nb)Falso\n")
+    end
+    
+  end
   #Pruebas para las listas enlazadas
   describe "#Extracción de elementos" do
     it "#Extraer el primer elemento" do
