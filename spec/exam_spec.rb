@@ -19,6 +19,9 @@ describe Examen do
     @sS2 = SimpleSelection.new("¿Que es un perro?",@options2)
     @questions =[@sS1,@sS2] 
     @p1 = Examen.new(@questions)
+    #Listas enlazadas
+    
+    @lista1 = List.new(@nodoCabeza)
   end  
 
   describe "# Almacenamiento de la pregunta." do
