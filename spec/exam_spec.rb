@@ -25,7 +25,7 @@ describe Examen do
     @nodoCabeza[:next] = nil
     @lista1 = List.new(@nodoCabeza)
   end  
-
+  #Pruebas para las preguntas de selección simple
   describe "# Almacenamiento de la pregunta." do
 
     it "Se almacena correctamente la pregunta." do
@@ -47,6 +47,12 @@ describe Examen do
     end  
     it "Preguntas y respuestas de examen" do
        @p1.to_s.should eq("¿De qué color es el coche del presidente?\na)azul\nb)verde\nc)negro\nd)naranja\n¿Que es un perro?\na)Un ave\nb)Un reptil\nc)Un mamifero\nd)Ninguna de las anteriores\n")
+    end
+  end
+  #Pruebas para las listas enlazadas
+  describe "#Extracción de elementos" do
+    it "#Extraer el primer elemento" do
+       @lista1.pullHead.should eq (nil)
     end
   end
 end
