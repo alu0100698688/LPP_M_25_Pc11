@@ -1,5 +1,6 @@
 require "exam/version.rb"
 require "exam/simpleSelection.rb"
+require "exam/list.rb"
 
 class Examen
 	attr_reader :myQuestion
