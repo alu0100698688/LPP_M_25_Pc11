@@ -119,20 +119,20 @@ describe Exam do
     it "#Insertar un elemento" do
        
        nodoInsertado = @lista1.insert(@nodo1)
-       nodoInsertado[:value].should eq (2)
-       nodoInsertado[:next].should eq (nil)
+       nodoInsertado.value.should eq (2)
+       nodoInsertado.next.should eq (nil)
     end
     it "#Insertar varios elementos" do
        ultimoNodoInsertado = @lista1.insertElements(@arrayNodos)
-       ultimoNodoInsertado[:value].should eq(5)
-       ultimoNodoInsertado[:next].should eq(nil)
+       ultimoNodoInsertado.value.should eq(5)
+       ultimoNodoInsertado.next.should eq(nil)
     end
   end
   describe "#Recoger información nodos" do
     it "#Recoger cabeza de la cola" do
       nodoCabeza = @lista1.cabeza
-      nodoCabeza[:value].should eq (3)
-      nodoCabeza[:next].should eq (nil)
+      nodoCabeza.value.should eq (3)
+      nodoCabeza.next.should eq (nil)
     end
   end
 end
