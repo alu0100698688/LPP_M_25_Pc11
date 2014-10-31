@@ -112,7 +112,7 @@ describe Exam do
   #Pruebas para las listas enlazadas
   describe "#Extracción de elementos" do
     it "#Extraer el primer elemento" do
-       @lista1.pullHead.should eq (nil)
+       @lista1.pullHead.should eq (3)
     end
   end
   describe "#Inserción de elementos" do
