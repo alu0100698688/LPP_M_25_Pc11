@@ -17,7 +17,6 @@ describe Exam do
     }
     @sS1 = SimpleSelection.new("¿De qué color es el coche del presidente?",@options1)
     @sS2 = SimpleSelection.new("¿Que es un perro?",@options2)
-    @questions =[@sS1,@sS2] 
     #Listas enlazadas
     @nodo1 = Node.new(2,nil)
     @nodo2 = Node.new(5,nil)
