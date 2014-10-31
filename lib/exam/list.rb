@@ -5,9 +5,8 @@ class List
        @cabeza = nodoCabeza
    end
    def pullHead
-      if @cabeza == nil
-         
-      else
+      if @cabeza != nil
+   
          contenido = @cabeza.value
          @cabeza = @cabeza.next
       end
