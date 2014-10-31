@@ -19,16 +19,10 @@ describe Exam do
     @sS2 = SimpleSelection.new("¿Que es un perro?",@options2)
     @questions =[@sS1,@sS2] 
     #Listas enlazadas
-    @nodo1 = Node.new
-    @nodo1[:value] = 2
-    @nodo1[:next] = nil
-    @nodo2 = Node.new
-    @nodo2[:value] = 5
-    @nodo2[:next] = nil
+    @nodo1 = Node.new(2,nil)
+    @nodo2 = Node.new(5,nil)
     @arrayNodos = [@nodo1,@nodo2]
-    @nodoCabeza = Node.new
-    @nodoCabeza[:value] = 3
-    @nodoCabeza[:next] = nil
+    @nodoCabeza = Node.new(3,nil)
     @lista1 = List.new(@nodoCabeza)
   end  
   #Pruebas para las preguntas de selección simple
