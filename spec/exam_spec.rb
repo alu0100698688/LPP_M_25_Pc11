@@ -1,6 +1,6 @@
-require "lib/examen.rb"
+require "lib/exam.rb"
 
-describe Examen do
+describe Exam do
 
   before :each do
     @options1 = {
@@ -18,7 +18,6 @@ describe Examen do
     @sS1 = SimpleSelection.new("¿De qué color es el coche del presidente?",@options1)
     @sS2 = SimpleSelection.new("¿Que es un perro?",@options2)
     @questions =[@sS1,@sS2] 
-    @p1 = Examen.new(@questions)
     #Listas enlazadas
     @nodo1 = Node.new
     @nodo1[:value] = 2
@@ -52,9 +51,7 @@ describe Examen do
     it "Mostrar una pregunta y su respuesta" do
        @sS1.to_s.should eq("¿De qué color es el coche del presidente?\na)azul\nb)verde\nc)negro\nd)naranja\n")
     end  
-    it "Preguntas y respuestas de examen" do
-       @p1.to_s.should eq("¿De qué color es el coche del presidente?\na)azul\nb)verde\nc)negro\nd)naranja\n¿Que es un perro?\na)Un ave\nb)Un reptil\nc)Un mamifero\nd)Ninguna de las anteriores\n")
-    end
+    
   end
   #Prueba de las preguntas de la práctica 6
   describe "#Comprobación preguntas y respuestas" do
