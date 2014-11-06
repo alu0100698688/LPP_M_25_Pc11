@@ -110,7 +110,10 @@ describe Exam do
        nodoInsertado = @lista1.insert(@nodo1)
        nodoInsertado.value.should eq (2)
        nodoInsertado.next.should eq (nil)
-
+       nodoAnterior = nodoInsertado.anterior
+       expect(nodoAnterior.value).to eq (3)
+       expect(nodoAnterior.next).to eq (@nodo1)
+       expect(nodoAnterior.anterior).to eq(nil)
     end
     it "#Insertar varios elementos" do
        ultimoNodoInsertado = @lista1.insertElements(@arrayNodos)
