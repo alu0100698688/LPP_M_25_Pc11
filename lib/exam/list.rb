@@ -1,8 +1,9 @@
 require_relative "node.rb"
 class List
-   attr_reader :cabeza
+   attr_reader :cabeza,:cola
    def initialize(nodoCabeza)
        @cabeza = nodoCabeza
+       @cola = @cabeza.next
    end
    def pullHead
       if @cabeza != nil
@@ -14,33 +15,35 @@ class List
       
    end
    def insert(node)
-      actual = @cabeza
-      siguiente = @cabeza.next
-      while siguiente != nil
-          actual = siguiente
-          siguiente = actual.next
+      if @cola == nil
+         node.anterior = @cabeza
+         @cola = node
+         @cabeza.next = @cola
+         
+      else
+         @cola.next = node
+         @cola.next.anterior = @cola
+         @cola = @cola.next
       end
-      node.anterior = actual
-      actual.next = node
-       
-      actual.next
+      @cola
    end
    def insertElements(arrayNodos)
-      i=0
+     i=0
+      if @cola == nil
+         arrayNodos[0].anterior = @cabeza
+         @cola = arrayNodos[0]
+         @cabeza.next = @cola
+         i += 1
+      end
       while i<arrayNodos.length
-            actual = @cabeza
-            siguiente = @cabeza.next
-
-            while siguiente != nil
-               actual = siguiente
-               siguiente = actual.next
-            end
-            arrayNodos[i].anterior = actual
-            actual.next = arrayNodos[i]
+            arrayNodos[i].anterior = @cola
+            @cola.next = arrayNodos[i]
+            @cola = @cola.next
             
             i +=1
        end
-       actual.next #Se devuelve el ultimo nodo insertado
+      
+      @cola #Se devuelve el ultimo nodo insertado
       
    end
     

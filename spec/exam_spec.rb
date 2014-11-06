@@ -107,19 +107,19 @@ describe Exam do
   describe "#Inserción de elementos" do
     it "#Insertar un elemento" do
        
-       nodoInsertado = @lista1.insert(@nodo1)
-       nodoInsertado.value.should eq (2)
-       nodoInsertado.next.should eq (nil)
-       nodoAnterior = nodoInsertado.anterior
+       cola = @lista1.insert(@nodo1)
+       cola.value.should eq (2)
+       cola.next.should eq (nil)
+       nodoAnterior = cola.anterior
        expect(nodoAnterior.value).to eq (3)
        expect(nodoAnterior.next).to eq (@nodo1)
        expect(nodoAnterior.anterior).to eq(nil)
     end
     it "#Insertar varios elementos" do
-       ultimoNodoInsertado = @lista1.insertElements(@arrayNodos)
-       ultimoNodoInsertado.value.should eq(5)
-       ultimoNodoInsertado.next.should eq(nil)
-       nodoAnterior = ultimoNodoInsertado.anterior
+       cola = @lista1.insertElements(@arrayNodos)
+       cola.value.should eq(5)
+       cola.next.should eq(nil)
+       nodoAnterior = cola.anterior
        expect(nodoAnterior.value).to eq (2)
        expect(nodoAnterior.next).to eq (@nodo2)
     end
