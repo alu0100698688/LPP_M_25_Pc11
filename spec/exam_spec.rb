@@ -119,6 +119,9 @@ describe Exam do
        ultimoNodoInsertado = @lista1.insertElements(@arrayNodos)
        ultimoNodoInsertado.value.should eq(5)
        ultimoNodoInsertado.next.should eq(nil)
+       nodoAnterior = ultimoNodoInsertado.anterior
+       expect(nodoAnterior.value).to eq (2)
+       expect(nodoAnterior.next).to eq (@nodo2)
     end
   end
   describe "#Recoger información nodos" do
