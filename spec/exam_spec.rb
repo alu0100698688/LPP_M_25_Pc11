@@ -1,4 +1,4 @@
-require "lib/exam.rb"
+require_relative "../lib/exam.rb"
 
 describe Exam do
 
@@ -28,21 +28,21 @@ describe Exam do
   describe "# Almacenamiento de la pregunta." do
 
     it "Se almacena correctamente la pregunta." do
-        @sS1.ask.should eq("¿De qué color es el coche del presidente?")
+        expect(@sS1.ask).to eq("¿De qué color es el coche del presidente?")
     end
 
     it "Se almacenan correctamente las respuestas." do
-        @sS1.answers_to_s.should eq("a)azul\nb)verde\nc)negro\nd)naranja\n")
+        expect(@sS1.answers_to_s).to eq("a)azul\nb)verde\nc)negro\nd)naranja\n")
     end
   end
   describe "# Obtencion respuestas" do
     it "Hash de opciones" do
-      @sS1.answers.should eq({"a"=>"azul", "b"=>"verde", "c"=>"negro", "d"=>"naranja"})
+      expect(@sS1.answers).to eq({"a"=>"azul", "b"=>"verde", "c"=>"negro", "d"=>"naranja"})
     end
   end 
   describe "#Mostrar preguntas y respuestas" do
     it "Mostrar una pregunta y su respuesta" do
-       @sS1.to_s.should eq("¿De qué color es el coche del presidente?\na)azul\nb)verde\nc)negro\nd)naranja\n")
+       expect(@sS1.to_s).to eq("¿De qué color es el coche del presidente?\na)azul\nb)verde\nc)negro\nd)naranja\n")
     end  
     
   end
@@ -57,7 +57,7 @@ describe Exam do
         "d" => "Ninguna de las anteriores"
       }
       pregunta1 = SimpleSelection.new(enunciado,opciones)
-      pregunta1.to_s.should eq("¿Cuál es la salida del siguiente código Ruby? class Xyz\ndef pots\n@nice\nend\nend\nxyz = Xyz.new\np xyz.pots\na)#<Xyz:0xa000208>\nb)nil\nc)0\nd)Ninguna de las anteriores\n")
+      expect(pregunta1.to_s).to eq("¿Cuál es la salida del siguiente código Ruby? class Xyz\ndef pots\n@nice\nend\nend\nxyz = Xyz.new\np xyz.pots\na)#<Xyz:0xa000208>\nb)nil\nc)0\nd)Ninguna de las anteriores\n")
     end
     it "#Comprobación pregunta 2" do
       enunciado = "La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}"
@@ -66,7 +66,7 @@ describe Exam do
         "b" => "Falso"
       }
       pregunta2 = SimpleSelection.new(enunciado,opciones)
-      pregunta2.to_s.should eq ("La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}\na)Cierto\nb)Falso\n")
+      expect(pregunta2.to_s).to eq ("La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}\na)Cierto\nb)Falso\n")
     end
     it "#Comprobación pregunta 3" do
       enunciado = "¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n"
@@ -77,7 +77,7 @@ describe Exam do
         "d" => "Ninguna de las anteriores"
       }
       pregunta3 = SimpleSelection.new(enunciado,opciones)
-      pregunta3.to_s.should eq ("¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n\na)1\nb)bob\nc)HEY!\nd)Ninguna de las anteriores\n")
+      expect(pregunta3.to_s).to eq ("¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n\na)1\nb)bob\nc)HEY!\nd)Ninguna de las anteriores\n")
     end
     it "#Comprobación pregunta 4" do
       enunciado = "¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n"
@@ -89,16 +89,12 @@ describe Exam do
         
       }
       pregunta4 = SimpleSelection.new(enunciado,opciones)
-      pregunta4.to_s.should eq("¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n\na)Una instancia de la clase Class\nb)Una constante\nc)Un objeto\nd)Ninguna de las anteriores\n")
+      expect(pregunta4.to_s).to eq("¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n\na)Una instancia de la clase Class\nb)Una constante\nc)Un objeto\nd)Ninguna de las anteriores\n")
     end
     it "#Comprobación pregunta 5" do
       enunciado = "Es apropiado que una clase Tablero herede de una clase Juego\n"
-      opciones ={
-        "a" => "Cierto",
-        "b" => "Falso"
-      }
-      pregunta5 = SimpleSelection.new(enunciado,opciones)
-      pregunta5.to_s.should eq("Es apropiado que una clase Tablero herede de una clase Juego\n\na)Cierto\nb)Falso\n")
+      pregunta5 = VerdaderoFalso.new(enunciado)
+      expect(pregunta5.to_s).to eq("Es apropiado que una clase Tablero herede de una clase Juego\n\na)Cierto\nb)Falso\n")
     end
     
   end
