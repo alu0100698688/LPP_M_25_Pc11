@@ -1,10 +1,10 @@
-# Práctica 6: Linked List
+# Práctica 7: Lista Doblemente Enlazada y preguntas de Verdadero y Falso
 
 ## Miembros del grupo.
 * Estefanía Morales Luís.
 
 
 ## Descripción de la práctica.
-La práctica consiste en implementar una clase List mediante el desarrollo dirigido por pruebas. Además,
-se harán una serie de pruebas para comprobar cinco preguntas propuestas en el enunciado de la práctica 
-con la clase creada en la práctica anterior (SimpleSelection).
+La práctica consiste en añadir a la clase List la funcionalidad de que se pueda almacenar el nodo anterior
+mediante el desarrollo dirigido por pruebas. Además, se creará la clase VerdaderoFalso con la cual se 
+podrá crear preguntas de verdadero y falso usando la herencia con la clase creada en la práctica anterior (SimpleSelection).
