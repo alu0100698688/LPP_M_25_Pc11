@@ -18,10 +18,10 @@ describe Exam do
     @sS1 = SimpleSelection.new("¿De qué color es el coche del presidente?",@options1)
     @sS2 = SimpleSelection.new("¿Que es un perro?",@options2)
     #Listas enlazadas
-    @nodo1 = Node.new(2,nil)
-    @nodo2 = Node.new(5,nil)
+    @nodo1 = Node.new(2,nil,nil)
+    @nodo2 = Node.new(5,nil,nil)
     @arrayNodos = [@nodo1,@nodo2]
-    @nodoCabeza = Node.new(3,nil)
+    @nodoCabeza = Node.new(3,nil,nil)
     @lista1 = List.new(@nodoCabeza)
   end  
   #Pruebas para las preguntas de selección simple
@@ -110,6 +110,7 @@ describe Exam do
        nodoInsertado = @lista1.insert(@nodo1)
        nodoInsertado.value.should eq (2)
        nodoInsertado.next.should eq (nil)
+
     end
     it "#Insertar varios elementos" do
        ultimoNodoInsertado = @lista1.insertElements(@arrayNodos)
