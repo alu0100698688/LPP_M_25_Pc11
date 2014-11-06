@@ -35,6 +35,7 @@ class List
                actual = siguiente
                siguiente = actual.next
             end
+            arrayNodos[i].anterior = actual
             actual.next = arrayNodos[i]
             
             i +=1
