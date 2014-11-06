@@ -20,6 +20,7 @@ class List
           actual = siguiente
           siguiente = actual.next
       end
+      node.anterior = actual
       actual.next = node
        
       actual.next
