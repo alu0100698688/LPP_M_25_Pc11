@@ -126,16 +126,24 @@ describe Exam do
   #Prueba para comparar preguntas práctica 8
   describe "#Comparar preguntas" do
     it "#Pregunta1 < Pregunta2" do
-       expect (@pregunta1 < @pregunta3).to eq(true)
-       expect (@pregunta2 < @pregunta5).to eq(true)
+       test = @pregunta1 < @pregunta3
+       test.should eq (true)
+       test2 = @pregunta2 < @vf1 
+       test2.should eq(true)
     end
     it "#Pregunta1 > Pregunta2" do
-       expect (@pregunta3 > @pregunta4).to eq(false)
-       expect (@pregunta5 > @pregunta2).to eq(true)
+       test = @pregunta3 > @pregunta4
+       test.should eq (false)
+       test2 = @vf1 > @pregunta2 
+       test2.should eq(true)
+       
     end
     it "#Pregunta1 == Pregunta2" do
-      expect (@sS1 == @pregunta5).to eq (true)
-      expect (@pregunta3 == @pregunta1).to eq(false)
+       test = @sS1 == @vf1
+       test.should eq (true)
+       test2 = @pregunta3 == @pregunta1 
+       test2.should eq(false)
+
     end
   end
   #Pruebas para las listas enlazadas
