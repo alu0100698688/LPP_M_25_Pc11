@@ -25,6 +25,11 @@ describe Exam do
     @lista1 = List.new(@nodoCabeza)
   end  
   #Pruebas para las preguntas de selección simple
+  describe "#Comprobación jerarquía"
+      it "#SimpleSelection es Question" 
+          expect(@sS1.instance_of?Question).to eq(true)
+      end
+  end
   describe "# Almacenamiento de la pregunta." do
 
     it "Se almacena correctamente la pregunta." do
