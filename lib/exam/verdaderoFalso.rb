@@ -3,8 +3,8 @@ class VerdaderoFalso < Question
         "a" => "Cierto",
         "b" => "Falso"
     }
-    def initialize (ask)
-       super(ask) 
+    def initialize (ask,difficulty=0)
+       super(ask,difficulty) 
     end
     def to_s 
         cadena = @ask + "\n"

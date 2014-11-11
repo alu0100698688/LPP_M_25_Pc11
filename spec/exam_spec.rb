@@ -26,6 +26,7 @@ describe Exam do
     @nodoCabeza = Node.new(3,nil,nil)
     @lista1 = List.new(@nodoCabeza)
     #Preguntas para las pruebas de la práctica 6
+    @difficulty = 6
     #Pregunta 1
     enunciado1 = "¿Cuál es la salida del siguiente código Ruby? class Xyz\ndef pots\n@nice\nend\nend\nxyz = Xyz.new\np xyz.pots"
       opciones1 ={
@@ -34,7 +35,9 @@ describe Exam do
         "c" => "0",
         "d" => "Ninguna de las anteriores"
       }
-    @pregunta1 = SimpleSelection.new(enunciado1,opciones1)
+    
+    @pregunta1 = SimpleSelection.new(enunciado1,opciones1,@difficulty)
+    
     @nodoP1 = Node.new(@pregunta1,@nodoP2,nil)
     #Pregunta 2
     enunciado2 = "La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}"
