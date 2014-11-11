@@ -1,8 +1,9 @@
-class SimpleSelection
-	attr_reader :ask,:answers
+require_relative "../exam/question.rb"
+class SimpleSelection < Question
+	attr_reader :answers
 
 	def initialize(ask, answers)
-		@ask = ask
+		super(ask)
 		@answers = answers
 	end
 
