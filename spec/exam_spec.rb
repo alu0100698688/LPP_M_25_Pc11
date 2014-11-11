@@ -16,7 +16,7 @@ describe Exam do
       "d" => "Ninguna de las anteriores"
     }
     
-    @sS1 = SimpleSelection.new("¿De qué color es el coche del presidente?",@options1)
+    @sS1 = SimpleSelection.new("¿De qué color es el coche del presidente?",@options1,5)
     @sS2 = SimpleSelection.new("¿Que es un perro?",@options2)
     
     #Listas enlazadas
@@ -26,7 +26,7 @@ describe Exam do
     @nodoCabeza = Node.new(3,nil,nil)
     @lista1 = List.new(@nodoCabeza)
     #Preguntas para las pruebas de la práctica 6
-    @difficulty = 6
+    
     #Pregunta 1
     enunciado1 = "¿Cuál es la salida del siguiente código Ruby? class Xyz\ndef pots\n@nice\nend\nend\nxyz = Xyz.new\np xyz.pots"
       opciones1 ={
@@ -36,12 +36,12 @@ describe Exam do
         "d" => "Ninguna de las anteriores"
       }
     
-    @pregunta1 = SimpleSelection.new(enunciado1,opciones1,@difficulty)
+    @pregunta1 = SimpleSelection.new(enunciado1,opciones1,6)
     
     @nodoP1 = Node.new(@pregunta1,@nodoP2,nil)
     #Pregunta 2
     enunciado2 = "La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}"
-    @pregunta2 = VerdaderoFalso.new(enunciado2)
+    @pregunta2 = VerdaderoFalso.new(enunciado2,4)
     @nodoP2 = Node.new(@pregunta2,@nodoP3,@nodoP1)
     #Pregunta 3
     enunciado3 = "¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n"
@@ -51,7 +51,7 @@ describe Exam do
         "c" => "HEY!",
         "d" => "Ninguna de las anteriores"
     }
-    @pregunta3 = SimpleSelection.new(enunciado3,opciones3)
+    @pregunta3 = SimpleSelection.new(enunciado3,opciones3,7)
     @nodoP3 = Node.new(@pregunta3,@nodoP4,@nodoP2)
     #Pregunta 4
     enunciado4 = "¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n"
@@ -62,10 +62,10 @@ describe Exam do
         "d" => "Ninguna de las anteriores"
         
       }
-      @pregunta4 = SimpleSelection.new(enunciado4,opciones4)
+      @pregunta4 = SimpleSelection.new(enunciado4,opciones4,8)
       @nodoP4 = Node.new(@pregunta4,@nodoP5,@nodoP3)
     #Pregunta 5
-    @vf1 = VerdaderoFalso.new("Es apropiado que una clase Tablero herede de una clase Juego")
+    @vf1 = VerdaderoFalso.new("Es apropiado que una clase Tablero herede de una clase Juego",5)
     @nodoP5 = Node.new(@vf1,nil,@nodoP4)
     @arrayNodosPreguntas = [@nodoP1,@nodoP2,@nodoP3,@nodoP4,@nodoP5]
   end  
@@ -122,6 +122,21 @@ describe Exam do
       expect(@vf1.to_s).to eq("Es apropiado que una clase Tablero herede de una clase Juego\na)Cierto\nb)Falso\n")
     end
     
+  end
+  #Prueba para comparar preguntas práctica 8
+  describe "#Comparar preguntas" do
+    it "#Pregunta1 < Pregunta2" do
+       expect (@pregunta1 < @pregunta3).to eq(true)
+       expect (@pregunta2 < @pregunta5).to eq(true)
+    end
+    it "#Pregunta1 > Pregunta2" do
+       expect (@pregunta3 > @pregunta4).to eq(false)
+       expect (@pregunta5 > @pregunta2).to eq(true)
+    end
+    it "#Pregunta1 == Pregunta2" do
+      expect (@sS1 == @pregunta5).to eq (true)
+      expect (@pregunta3 == @pregunta1).to eq(false)
+    end
   end
   #Pruebas para las listas enlazadas
   describe "#Extracción de elementos" do
