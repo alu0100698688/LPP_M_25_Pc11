@@ -15,8 +15,10 @@ describe Exam do
       "c" => "Un mamifero",
       "d" => "Ninguna de las anteriores"
     }
+    
     @sS1 = SimpleSelection.new("¿De qué color es el coche del presidente?",@options1)
     @sS2 = SimpleSelection.new("¿Que es un perro?",@options2)
+    @vf1 = VerdaderoFalso.new("Es apropiado que una clase Tablero herede de una clase Juego")
     #Listas enlazadas
     @nodo1 = Node.new(2,nil,nil)
     @nodo2 = Node.new(5,nil,nil)
@@ -28,6 +30,9 @@ describe Exam do
   describe "#Comprobación jerarquía" do
       it "#SimpleSelection es Question" do
           expect(@sS1.is_a?Question).to eq(true)
+      end
+      it "#VerdaderoFalso es Question" do
+          expect(@vf1.is_a?Question).to eq(true)
       end
   end
   describe "# Almacenamiento de la pregunta." do
