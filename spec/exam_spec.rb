@@ -18,13 +18,53 @@ describe Exam do
     
     @sS1 = SimpleSelection.new("¿De qué color es el coche del presidente?",@options1)
     @sS2 = SimpleSelection.new("¿Que es un perro?",@options2)
-    @vf1 = VerdaderoFalso.new("Es apropiado que una clase Tablero herede de una clase Juego")
+    
     #Listas enlazadas
     @nodo1 = Node.new(2,nil,nil)
     @nodo2 = Node.new(5,nil,nil)
     @arrayNodos = [@nodo1,@nodo2]
     @nodoCabeza = Node.new(3,nil,nil)
     @lista1 = List.new(@nodoCabeza)
+    #Preguntas para las pruebas de la práctica 6
+    #Pregunta 1
+    enunciado1 = "¿Cuál es la salida del siguiente código Ruby? class Xyz\ndef pots\n@nice\nend\nend\nxyz = Xyz.new\np xyz.pots"
+      opciones1 ={
+        "a" => "#<Xyz:0xa000208>",
+        "b" => "nil",
+        "c" => "0",
+        "d" => "Ninguna de las anteriores"
+      }
+    @pregunta1 = SimpleSelection.new(enunciado1,opciones1)
+    @nodoP1 = Node.new(@pregunta1,@nodoP2,nil)
+    #Pregunta 2
+    enunciado2 = "La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}"
+    @pregunta2 = VerdaderoFalso.new(enunciado2)
+    @nodoP2 = Node.new(@pregunta2,@nodoP3,@nodoP1)
+    #Pregunta 3
+    enunciado3 = "¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n"
+    opciones3 = {
+        "a" => "1",
+        "b" => "bob",
+        "c" => "HEY!",
+        "d" => "Ninguna de las anteriores"
+    }
+    @pregunta3 = SimpleSelection.new(enunciado3,opciones3)
+    @nodoP3 = Node.new(@pregunta3,@nodoP4,@nodoP2)
+    #Pregunta 4
+    enunciado4 = "¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n"
+      opciones4 ={
+        "a" => "Una instancia de la clase Class",
+        "b" => "Una constante",
+        "c" => "Un objeto",
+        "d" => "Ninguna de las anteriores"
+        
+      }
+      @pregunta4 = SimpleSelection.new(enunciado4,opciones4)
+      @nodoP4 = Node.new(@pregunta4,@nodoP5,@nodoP3)
+    #Pregunta 5
+    @vf1 = VerdaderoFalso.new("Es apropiado que una clase Tablero herede de una clase Juego")
+    @nodoP5 = Node.new(@vf1,nil,@nodoP4)
+    @arrayNodosPreguntas = [@nodoP1,@nodoP2,@nodoP3,@nodoP4,@nodoP5]
   end  
   #Pruebas para las preguntas de selección simple
   describe "#Comprobación jerarquía" do
@@ -59,52 +99,24 @@ describe Exam do
   #Prueba de las preguntas de la práctica 6
   describe "#Comprobación preguntas y respuestas" do
     it "#Comprobación pregunta 1" do
-      enunciado = "¿Cuál es la salida del siguiente código Ruby? class Xyz\ndef pots\n@nice\nend\nend\nxyz = Xyz.new\np xyz.pots"
-      opciones ={
-        "a" => "#<Xyz:0xa000208>",
-        "b" => "nil",
-        "c" => "0",
-        "d" => "Ninguna de las anteriores"
-      }
-      pregunta1 = SimpleSelection.new(enunciado,opciones)
-      expect(pregunta1.to_s).to eq("¿Cuál es la salida del siguiente código Ruby? class Xyz\ndef pots\n@nice\nend\nend\nxyz = Xyz.new\np xyz.pots\na)#<Xyz:0xa000208>\nb)nil\nc)0\nd)Ninguna de las anteriores\n")
+      
+      expect(@pregunta1.to_s).to eq("¿Cuál es la salida del siguiente código Ruby? class Xyz\ndef pots\n@nice\nend\nend\nxyz = Xyz.new\np xyz.pots\na)#<Xyz:0xa000208>\nb)nil\nc)0\nd)Ninguna de las anteriores\n")
     end
     it "#Comprobación pregunta 2" do
-      enunciado = "La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}"
-      opciones = {
-        "a" => "Cierto",
-        "b" => "Falso"
-      }
-      pregunta2 = SimpleSelection.new(enunciado,opciones)
-      expect(pregunta2.to_s).to eq ("La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}\na)Cierto\nb)Falso\n")
+      
+      expect(@pregunta2.to_s).to eq ("La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}\na)Cierto\nb)Falso\n")
     end
     it "#Comprobación pregunta 3" do
-      enunciado = "¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n"
-      opciones = {
-        "a" => "1",
-        "b" => "bob",
-        "c" => "HEY!",
-        "d" => "Ninguna de las anteriores"
-      }
-      pregunta3 = SimpleSelection.new(enunciado,opciones)
-      expect(pregunta3.to_s).to eq ("¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n\na)1\nb)bob\nc)HEY!\nd)Ninguna de las anteriores\n")
+      
+      expect(@pregunta3.to_s).to eq ("¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n\na)1\nb)bob\nc)HEY!\nd)Ninguna de las anteriores\n")
     end
     it "#Comprobación pregunta 4" do
-      enunciado = "¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n"
-      opciones ={
-        "a" => "Una instancia de la clase Class",
-        "b" => "Una constante",
-        "c" => "Un objeto",
-        "d" => "Ninguna de las anteriores"
-        
-      }
-      pregunta4 = SimpleSelection.new(enunciado,opciones)
-      expect(pregunta4.to_s).to eq("¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n\na)Una instancia de la clase Class\nb)Una constante\nc)Un objeto\nd)Ninguna de las anteriores\n")
+      
+      expect(@pregunta4.to_s).to eq("¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n\na)Una instancia de la clase Class\nb)Una constante\nc)Un objeto\nd)Ninguna de las anteriores\n")
     end
     it "#Comprobación pregunta 5" do
-      enunciado = "Es apropiado que una clase Tablero herede de una clase Juego\n"
-      pregunta5 = VerdaderoFalso.new(enunciado)
-      expect(pregunta5.to_s).to eq("Es apropiado que una clase Tablero herede de una clase Juego\n\na)Cierto\nb)Falso\n")
+      
+      expect(@vf1.to_s).to eq("Es apropiado que una clase Tablero herede de una clase Juego\na)Cierto\nb)Falso\n")
     end
     
   end
@@ -132,6 +144,18 @@ describe Exam do
        nodoAnterior = cola.anterior
        expect(nodoAnterior.value).to eq (2)
        expect(nodoAnterior.next).to eq (@nodo2)
+    end
+    it "#Introducir preguntas en la lista" do
+      
+      cola  = @lista1.insertElements(@arrayNodosPreguntas)
+      preguntaPrueba = cola.value
+      expect(preguntaPrueba.to_s).to eq("Es apropiado que una clase Tablero herede de una clase Juego\na)Cierto\nb)Falso\n") 
+      cola.next.should eq(nil)
+      expect((cola.anterior.value).is_a?Question).to eq(true)
+      nodoAnterior = cola.anterior
+      preguntaAnterior = nodoAnterior.value
+      expect(preguntaAnterior.to_s).to eq("¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n\na)Una instancia de la clase Class\nb)Una constante\nc)Un objeto\nd)Ninguna de las anteriores\n") 
+      
     end
   end
   describe "#Recoger información nodos" do
