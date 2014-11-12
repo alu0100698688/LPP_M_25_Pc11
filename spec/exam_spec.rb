@@ -68,6 +68,14 @@ describe Exam do
     @vf1 = VerdaderoFalso.new("Es apropiado que una clase Tablero herede de una clase Juego",5)
     @nodoP5 = Node.new(@vf1,nil,@nodoP4)
     @arrayNodosPreguntas = [@nodoP1,@nodoP2,@nodoP3,@nodoP4,@nodoP5]
+    
+    #Crear una nueva lista con las preguntas de la práctica anterior para las pruebas de la práctica 8
+    @lista2 = List.new(@nodoP1)
+    @arrayPreguntas = [@nodoP2,@nodoP3,@nodoP4,@nodoP5]
+    @lista2.insertElements(@arrayPreguntas)
+    
+    
+    
   end  
   #Pruebas para las preguntas de selección simple
   describe "#Comprobación jerarquía" do
@@ -191,4 +199,18 @@ describe Exam do
       nodoCabeza.next.should eq (nil)
     end
   end
+  #Pruebas para la práctica 8
+  describe "#Comprobación de lista enumerable" do
+    
+    it "#Prueba con count" do
+        
+        @lista2.count.should eq (5)
+    end
+    it "#Prueba con all?" do
+        
+        @lista2.all?.should eq (true)
+    end
+    
+  end
+  
 end
