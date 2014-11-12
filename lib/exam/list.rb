@@ -1,4 +1,10 @@
 require_relative "node.rb"
+class Node
+   include Comparable
+   def <=> (other)
+      value <=> other.value
+   end
+end
 class List
    include Enumerable
    attr_reader :cabeza,:cola

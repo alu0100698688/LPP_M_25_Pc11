@@ -204,13 +204,35 @@ describe Exam do
     
     it "#Prueba con count" do
         
-        @lista2.count.should eq (5)
+        expect(@lista2.count).to eq (5)
     end
     it "#Prueba con all?" do
         
-        @lista2.all?.should eq (true)
+        expect(@lista2.all?).to eq (true)
     end
     
   end
-  
+  describe "#Comprobación lista enumerable nodos comparables" do
+    
+    it "#Prueba con max y min" do
+        expect(@lista2.max).to eq (@pregunta4)
+        expect(@lista2.min).to eq (@pregunta2)
+    end
+    it "#Prueba con first" do
+        expect(@lista2.first).to eq (@pregunta1)
+    end
+    it "#Prueba con sort" do
+        arrayPreguntas = [@pregunta4,@pregunta3,@pregunta1,@vf1,@pregunta2]
+        expect(@lista2.sort{|p1,p2| p2<=>p1}).to eq (arrayPreguntas)
+    end
+    it "#Prueba con detect" do #Detect devuelve el primero que cumple la condición
+        expect(@lista2.detect{|preg| preg.difficulty % 2 == 0}).to eq(@pregunta1)
+    end
+    it "#Prueba con collect" do 
+        array = [12,8,14,16,10]
+        expect(@lista2.collect{|preg| preg.difficulty*2}).to eq (array)
+    end
+    
+      
+  end
 end
