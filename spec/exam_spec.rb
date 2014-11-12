@@ -203,7 +203,7 @@ describe Exam do
   describe "#Comprobación de lista enumerable" do
     
     it "#Prueba con count" do
-        
+
         expect(@lista2.count).to eq (5)
     end
     it "#Prueba con all?" do
@@ -235,4 +235,5 @@ describe Exam do
     
       
   end
+
 end
