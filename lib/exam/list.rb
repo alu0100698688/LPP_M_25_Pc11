@@ -1,5 +1,6 @@
 require_relative "node.rb"
 class List
+   include Enumerable
    attr_reader :cabeza,:cola
    def initialize(nodoCabeza)
        @cabeza = nodoCabeza
@@ -46,5 +47,13 @@ class List
       @cola #Se devuelve el ultimo nodo insertado
       
    end
+   def each
+      actual = @cabeza
+      while actual != nil
+         yield actual.value
+         actual = actual.next
+      end
+      
+   end 
     
 end
