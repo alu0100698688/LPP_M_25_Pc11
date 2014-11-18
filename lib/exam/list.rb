@@ -53,6 +53,34 @@ class List
       @cola #Se devuelve el ultimo nodo insertado
       
    end
+   #Sin confirmar
+   def delete(nodo)
+      if nodo == @cola
+         contenido = @cola.value
+         @cola = nodo.anterior
+         @cola.next = nil
+         
+      else
+         if nodo == @cabeza 
+            
+            pullHead(nodo)
+            
+         else
+            actual = @cabeza
+            while actual != nodo
+               actual = actual.next
+            end
+            anterior = actual.anterior
+            siguiente = actual.next
+            anterior.next = siguiente
+            siguiente.anterior = anterior
+            contenido = siguiente.value
+         end
+        
+      end
+      contenido
+   end
+   
    def each
       actual = @cabeza
       while actual != nil

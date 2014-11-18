@@ -195,6 +195,18 @@ describe Exam do
       
     end
   end
+  
+  describe "#Eliminar nodos" do
+    it "#Eliminar un nodo de en medio de la lista" do
+      expect(@lista2.delete(@nodoP3)).to eq(@pregunta4)
+      expect(@lista2.count).to eq(4)
+    end
+    it "#Eliminar la cola" do
+       expect(@lista2.delete(@nodoP5)).to eq(@vf1)
+       expect(@lista2.count).to eq(4)
+    end
+  end
+  
   describe "#Recoger información nodos" do
     it "#Recoger cabeza de la cola" do
       nodoCabeza = @lista1.cabeza
@@ -237,6 +249,14 @@ describe Exam do
     end
     
       
+  end
+  #Pruebas para Examen práctica 9 
+  describe "#Acceso al examen" do
+    it "#Añadir una pregunta al examen" do
+      expect(@examen.insertQuestion(@sS1)).to eq(@sS1)
+    end
+    
+    
   end
   
 

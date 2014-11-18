@@ -9,6 +9,12 @@ module Exam
      def initialize (listaPreguntas)
         @preguntas = listaPreguntas 
      end
+     
+     def insertQuestion(question)
+        nodoNuevo = Node.new(question,nil,@preguntas.cola)
+        nodoInsertado = @preguntas.insert(nodoNuevo)
+        nodoInsertado.value
+     end
       
   end    
 end
