@@ -75,6 +75,8 @@ describe Exam do
     @arrayPreguntas = [@nodoP2,@nodoP3,@nodoP4,@nodoP5]
     @lista2.insertElements(@arrayPreguntas)
     
+    #Crear variables necesarias para la práctica 9
+    @examen = Exam::Examen.new(@lista2)
     
     
   end  

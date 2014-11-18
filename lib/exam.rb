@@ -4,5 +4,11 @@ require "exam/list.rb"
 require "exam/verdaderoFalso.rb"
 
 module Exam
-  # Your code goes here...
+  class Examen
+     
+     def initialize (listaPreguntas)
+        @preguntas = listaPreguntas 
+     end
+      
+  end    
 end
