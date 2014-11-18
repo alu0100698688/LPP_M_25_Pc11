@@ -151,7 +151,7 @@ describe Exam do
     end
     it "#Pregunta1 == Pregunta2" do
        test = @sS1 == @vf1
-       test.should eq (true)
+       test.should eq (false)
        test2 = @pregunta3 == @pregunta1 
        test2.should eq(false)
 
@@ -238,5 +238,6 @@ describe Exam do
     
       
   end
+  
 
 end
