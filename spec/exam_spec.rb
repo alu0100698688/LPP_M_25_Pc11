@@ -272,10 +272,14 @@ describe Exam do
       cadena = @pregunta2.to_s + @vf1.to_s + @pregunta1.to_s + @pregunta3.to_s + @pregunta4.to_s
       expect(@interfaz.to_s).to eq(cadena)
     end
-    it "#Se evaluan las respuestas a las preguntas" do
+    it "#Se evalua si todas las respuestas correctas" do
       arrayRespuestas = ["b","a","c","c","a"]
       expect(@interfaz.compararRespuestas(arrayRespuestas)).to eq("Su nota es: Sobresaliente 10")
       
+    end
+    it "#Se evalua si el examen está suspenso" do
+      arrayRespuestas = ["a","c","b","c","a"]
+      expect(@interfaz.compararRespuestas(arrayRespuestas)).to eq("Ha suspendido el examen: 2/5")
     end
   end
 

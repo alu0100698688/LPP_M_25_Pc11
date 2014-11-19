@@ -16,7 +16,7 @@ class Interfaz
           end
           iterador +=1
       end
-      if respuestasCorrectas < (iterador/2)
+      if respuestasCorrectas < (iterador/2)+1
           mensaje = "Ha suspendido el examen: #{respuestasCorrectas}/#{iterador}"
       else
           if respuestasCorrectas == iterador
