@@ -2,8 +2,8 @@ require_relative "../exam/question.rb"
 class SimpleSelection < Question
 	attr_reader :answers
 
-	def initialize(ask, answers,difficulty=0)
-		super(ask,difficulty)
+	def initialize(ask, answers,respuestaCorrecta,difficulty=0)
+		super(ask,respuestaCorrecta,difficulty)
 		@answers = answers
 	end
 

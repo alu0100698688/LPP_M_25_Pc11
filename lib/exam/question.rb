@@ -1,8 +1,8 @@
 class Question
     include Comparable
-    attr_reader :ask,:difficulty
-    def initialize(ask,difficulty=0)
-        @ask,@difficulty = ask,difficulty
+    attr_reader :ask,:difficulty,:respuestaCorrecta
+    def initialize(ask,respuestaCorrecta,difficulty=0)
+        @ask,@respuestaCorrecta,@difficulty = ask,respuestaCorrecta,difficulty
     end 
     def <=> (other)
        return nil unless other.is_a?Question

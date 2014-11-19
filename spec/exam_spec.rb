@@ -18,8 +18,8 @@ describe Exam do
       "d" => "Ninguna de las anteriores"
     }
     
-    @sS1 = SimpleSelection.new("¿De qué color es el coche del presidente?",@options1,5)
-    @sS2 = SimpleSelection.new("¿Que es un perro?",@options2)
+    @sS1 = SimpleSelection.new("¿De qué color es el coche del presidente?",@options1,"c",5)
+    @sS2 = SimpleSelection.new("¿Que es un perro?",@options2,"c")
     
     #Listas enlazadas
     @nodo1 = Node.new(2,nil,nil)
@@ -38,12 +38,12 @@ describe Exam do
         "d" => "Ninguna de las anteriores"
       }
     
-    @pregunta1 = SimpleSelection.new(enunciado1,opciones1,6)
+    @pregunta1 = SimpleSelection.new(enunciado1,opciones1,"b",6)
     
     @nodoP1 = Node.new(@pregunta1,@nodoP2,nil)
     #Pregunta 2
     enunciado2 = "La siguiente definición de un hash en Ruby es válida:\n hash_raro = {\n[1, 2, 3] => Object.new(),\nHash.new => :toto\n}"
-    @pregunta2 = VerdaderoFalso.new(enunciado2,4)
+    @pregunta2 = VerdaderoFalso.new(enunciado2,"a",4)
     @nodoP2 = Node.new(@pregunta2,@nodoP3,@nodoP1)
     #Pregunta 3
     enunciado3 = "¿Cuál es la salida del siguiente código Ruby?\n class Array\ndef say_hi\n\"HEY!\"\nend\nend\np [1, \"bob\"].say_hi\n"
@@ -53,7 +53,7 @@ describe Exam do
         "c" => "HEY!",
         "d" => "Ninguna de las anteriores"
     }
-    @pregunta3 = SimpleSelection.new(enunciado3,opciones3,7)
+    @pregunta3 = SimpleSelection.new(enunciado3,opciones3,"c",7)
     @nodoP3 = Node.new(@pregunta3,@nodoP4,@nodoP2)
     #Pregunta 4
     enunciado4 = "¿Cúal es el tipo del objeto en el siguiente código Ruby?\nclass Objeto\nend\n"
@@ -64,10 +64,10 @@ describe Exam do
         "d" => "Ninguna de las anteriores"
         
       }
-      @pregunta4 = SimpleSelection.new(enunciado4,opciones4,8)
+      @pregunta4 = SimpleSelection.new(enunciado4,opciones4,"c",8)
       @nodoP4 = Node.new(@pregunta4,@nodoP5,@nodoP3)
     #Pregunta 5
-    @vf1 = VerdaderoFalso.new("Es apropiado que una clase Tablero herede de una clase Juego",5)
+    @vf1 = VerdaderoFalso.new("Es apropiado que una clase Tablero herede de una clase Juego","a",5)
     @nodoP5 = Node.new(@vf1,nil,@nodoP4)
     @arrayNodosPreguntas = [@nodoP1,@nodoP2,@nodoP3,@nodoP4,@nodoP5]
     
@@ -268,9 +268,14 @@ describe Exam do
   #Pruebas para Interfaz práctica 9
   describe "#Interfaz" do
     it "#Se muestran las preguntas ordenadas" do
-      preguntas= @interfaz.examen.preguntas.sort{|p1,p2| p1<=>p2}
+      
       cadena = @pregunta2.to_s + @vf1.to_s + @pregunta1.to_s + @pregunta3.to_s + @pregunta4.to_s
       expect(@interfaz.to_s).to eq(cadena)
+    end
+    it "#Se evaluan las respuestas a las preguntas" do
+      arrayRespuestas = ["b","a","c","c","a"]
+      expect(@interfaz.compararRespuestas(arrayRespuestas)).to eq("Su nota es: Sobresaliente 10")
+      
     end
   end
 
