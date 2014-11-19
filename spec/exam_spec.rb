@@ -257,9 +257,21 @@ describe Exam do
     it "#Añadir una pregunta al examen" do
       expect(@examen.insertQuestion(@sS1)).to eq(@sS1)
     end
+    it "#Mostrar preguntas examen" do
+      cadena = @pregunta1.to_s + @pregunta2.to_s + @pregunta3.to_s + @pregunta4.to_s + @vf1.to_s
+      expect(@examen.to_s).to eq(cadena)
+      
+    end
     
     
   end
-  
+  #Pruebas para Interfaz práctica 9
+  describe "#Interfaz" do
+    it "#Se muestran las preguntas ordenadas" do
+      preguntas= @interfaz.examen.preguntas.sort{|p1,p2| p1<=>p2}
+      cadena = @pregunta2.to_s + @vf1.to_s + @pregunta1.to_s + @pregunta3.to_s + @pregunta4.to_s
+      expect(@interfaz.to_s).to eq(cadena)
+    end
+  end
 
 end

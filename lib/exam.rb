@@ -16,6 +16,13 @@ module Exam
         nodoInsertado.value
      end
      
+     def to_s 
+       cadena =""
+       for i in @preguntas do
+          cadena +=i.to_s
+       end
+       cadena
+     end
     
       
   end    
