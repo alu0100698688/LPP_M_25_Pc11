@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/alu0100698688/LPP_M_25_Pc09.svg?branch=master)](https://travis-ci.org/alu0100698688/LPP_M_25_Pc09)
+[![Coverage Status](https://coveralls.io/repos/alu0100698688/LPP_M_25_Pc09/badge.png)](https://coveralls.io/r/alu0100698688/LPP_M_25_Pc09)
+
 # Práctica 9: Clase Examen. Uso de la herramienta Coverall.
 
 ## Miembros del grupo.
