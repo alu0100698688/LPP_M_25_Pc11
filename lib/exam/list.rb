@@ -53,7 +53,7 @@ class List
       @cola #Se devuelve el ultimo nodo insertado
       
    end
-   #Sin confirmar
+   
    def delete(nodo)
       if nodo == @cola
          contenido = @cola.value

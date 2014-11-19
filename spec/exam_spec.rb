@@ -1,5 +1,6 @@
 #encoding: UTF-8
 require_relative "../lib/exam.rb"
+require_relative "../lib/exam/interfaz.rb"
 
 describe Exam do
 
@@ -78,6 +79,7 @@ describe Exam do
     #Crear variables necesarias para la práctica 9
     @examen = Exam::Examen.new(@lista2)
     
+    @interfaz = Interfaz.new(@examen)
     
   end  
   #Pruebas para las preguntas de selección simple
