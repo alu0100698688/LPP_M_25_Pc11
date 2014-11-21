@@ -1,4 +1,5 @@
 #encoding: UTF-8
+require_relative "spec_helper"
 require_relative "../lib/exam.rb"
 require_relative "../lib/exam/interfaz.rb"
 
@@ -254,6 +255,7 @@ describe Exam do
   end
   #Pruebas para Examen práctica 9 
   describe "#Acceso al examen" do
+    
     it "#Añadir una pregunta al examen" do
       expect(@examen.insertQuestion(@sS1)).to eq(@sS1)
     end
