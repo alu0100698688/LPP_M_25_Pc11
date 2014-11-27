@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/alu0100698688/LPP_M_25_Pc09.svg?branch=master)](https://travis-ci.org/alu0100698688/LPP_M_25_Pc09)
-[![Coverage Status](https://coveralls.io/repos/alu0100698688/LPP_M_25_Pc09/badge.png)](https://coveralls.io/r/alu0100698688/LPP_M_25_Pc09)
+[![Build Status](https://travis-ci.org/alu0100698688/LPP_M_25_Pc10.svg)](https://travis-ci.org/alu0100698688/LPP_M_25_Pc10)
+[![Coverage Status](https://coveralls.io/repos/alu0100698688/LPP_M_25_Pc10/badge.png)](https://coveralls.io/r/alu0100698688/LPP_M_25_Pc10)
 
 # Práctica 10: Programación funcional y documentación de la gema
 
