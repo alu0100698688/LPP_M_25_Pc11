@@ -42,6 +42,7 @@ class List
          @cola.next.anterior = @cola
          @cola = @cola.next
       end
+  
       @cola
    end
    # Método que recibe un conjunto de nodos y los inserta en la lista.
@@ -104,5 +105,7 @@ lista
       end
       
    end 
+   
+   
     
 end

@@ -6,6 +6,7 @@ require_relative "exam/verdaderoFalso.rb"
 module Exam
   # Esta clase permite crear un examen donde se almacenan preguntas.
   class Examen
+     include Enumerable
      # Atributo que almacena un listado de preguntas para el examen
      attr_reader :preguntas
      # Inicialización del conjunto de preguntas del examen.
@@ -18,6 +19,14 @@ module Exam
         nodoInsertado = @preguntas.insert(nodoNuevo)
         nodoInsertado.value
      end
+     #Método para invertir la lista 
+     def invertirPreguntas
+        cadena=""
+        @preguntas.reverse_each do |preg|
+            cadena += preg.to_s
+        end
+        cadena
+     end
      # Método que devuelve una cadena con las preguntas del examen
      def to_s 
        cadena =""
@@ -26,6 +35,11 @@ module Exam
        end
        cadena
      end
+     # Método que hay que implementar al incluir el Mixin Enumerable. LLamada al each de la lista de preguntas.
+     def each
+      @preguntas.each
+      
+     end 
     
       
   end    

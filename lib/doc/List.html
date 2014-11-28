@@ -231,7 +231,7 @@ posición en ella.</p>
 
           
           <div class="method-source-code" id="delete-source">
-            <pre><span class="ruby-comment"># File exam/list.rb, line 68</span>
+            <pre><span class="ruby-comment"># File exam/list.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">nodo</span>)
    <span class="ruby-keyword">if</span> <span class="ruby-identifier">nodo</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@cola</span>
       <span class="ruby-identifier">contenido</span> = <span class="ruby-ivar">@cola</span>.<span class="ruby-identifier">value</span>
@@ -288,7 +288,7 @@ el valor de cada nodo de la  lista</p>
 
           
           <div class="method-source-code" id="each-source">
-            <pre><span class="ruby-comment"># File exam/list.rb, line 99</span>
+            <pre><span class="ruby-comment"># File exam/list.rb, line 100</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
    <span class="ruby-identifier">actual</span> = <span class="ruby-ivar">@cabeza</span>
    <span class="ruby-keyword">while</span> <span class="ruby-identifier">actual</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
@@ -338,6 +338,7 @@ el valor de cada nodo de la  lista</p>
       <span class="ruby-ivar">@cola</span>.<span class="ruby-identifier">next</span>.<span class="ruby-identifier">anterior</span> = <span class="ruby-ivar">@cola</span>
       <span class="ruby-ivar">@cola</span> = <span class="ruby-ivar">@cola</span>.<span class="ruby-identifier">next</span>
    <span class="ruby-keyword">end</span>
+  
    <span class="ruby-ivar">@cola</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
@@ -369,7 +370,7 @@ el valor de cada nodo de la  lista</p>
 
           
           <div class="method-source-code" id="insertElements-source">
-            <pre><span class="ruby-comment"># File exam/list.rb, line 48</span>
+            <pre><span class="ruby-comment"># File exam/list.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">insertElements</span>(<span class="ruby-identifier">arrayNodos</span>)
   <span class="ruby-identifier">i</span>=<span class="ruby-value">0</span>
    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@cola</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
