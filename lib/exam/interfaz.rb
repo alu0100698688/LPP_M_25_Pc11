@@ -1,11 +1,17 @@
 require_relative "../exam.rb"
+# Clase que permite representar un examen con sus preguntas y comprobar la puntuación del mismo.
 class Interfaz
+   # Atributo que tendrá el examen sobre el que se realizarán las comprobaciones.
    attr_reader :examen
+   # Inicialización del atributo examen.
    def initialize(examen)
       @examen = examen 
        
    end
-   
+=begin 
+Método que en función de unas respuestas proporcionadas por el usuario comprueba la nota obtenida en el 
+examen y se la muestra al usuario.
+=end 
    def compararRespuestas(respuestasUsuario)
       iterador =0
       respuestasCorrectas = 0
@@ -28,6 +34,7 @@ class Interfaz
       mensaje
    end
    
+   # Método que devuelve una cadena con las preguntas ordenadas de menor a mayor.
    def to_s
        cadena=""
        preguntas = @examen.preguntas.sort{|p1,p2| p1<=>p2}
