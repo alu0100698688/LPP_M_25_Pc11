@@ -284,5 +284,14 @@ describe Exam do
       expect(@interfaz.compararRespuestas(arrayRespuestas)).to eq("Ha suspendido el examen: 2/5")
     end
   end
+  # Pruebas para el desarrollo funcional de la práctica 10
+  describe "#Invertir preguntas del examen" do
+    it "#Método funcional" do
+      cadena = @vf1.to_s + @pregunta4.to_s + @pregunta3.to_s + @pregunta2.to_s + @pregunta1.to_s
+      cadenaObtenida = @examen.invertirPreguntas
+      expect(cadenaObtenida).to eq(cadena)
+    end
+    
+  end
 
 end
