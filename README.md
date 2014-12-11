@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/alu0100698688/LPP_M_25_Pc10.svg)](https://travis-ci.org/alu0100698688/LPP_M_25_Pc11)
-[![Coverage Status](https://coveralls.io/repos/alu0100698688/LPP_M_25_Pc10/badge.png)](https://coveralls.io/r/alu0100698688/LPP_M_25_Pc11)
+[![Build Status](https://travis-ci.org/alu0100698688/LPP_M_25_Pc11.svg)](https://travis-ci.org/alu0100698688/LPP_M_25_Pc11)
+[![Coverage Status](https://coveralls.io/repos/alu0100698688/LPP_M_25_Pc11/badge.png)](https://coveralls.io/r/alu0100698688/LPP_M_25_Pc11)
 
 # Práctica 11: Diseñar e implementar un lenguaje de dominio específico.
 
