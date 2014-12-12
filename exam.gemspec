@@ -4,10 +4,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'exam/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "exam"
+  spec.name          = "estefania_exam"
   spec.version       = Exam::VERSION
-  spec.authors       = ["Adrian"]
-  spec.email         = ["acglez10@gmail.com"]
+  spec.authors       = ["Estefania"]
+  spec.email         = ["fany.morl@gmail.com"]
   spec.summary       = "Creación de una clase exam usando Bunle y el método de desarrollo dirigido por pruebas."
   spec.description   = "Crear la clase exam."
   spec.homepage      = ""
