@@ -41,6 +41,21 @@ class Quiz
       	cadena
   
     end
+    
+    def checkAnswers(answersUser)
+       count = 0
+       i = 0
+       @questions.each do |q|
+          
+          if q.check(answersUser[i])
+             count +=1
+          end
+          i +=1
+           
+       end 
+       "Resultado: #{count}/#{@questions.size}"
+        
+    end
 
 
 end

@@ -12,6 +12,12 @@ class Question
     @answers = answers.map { |k, v| Answer.new(k[ORDER], k[KIND],  v) }.sort
   end
   
+  def check(answerUser)
+    
+    @answers[answerUser -1].is_right?
+    
+  end
+  
   def to_s
     cadena = @text + "\n"
     @answers.each do |answer|

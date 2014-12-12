@@ -41,4 +41,15 @@ describe Quiz do
         end
     end
     
+    describe "#Responder preguntas" do
+        it "#Todas correctas" do
+            answersUser = [1,2]
+            expect(@quiz1.checkAnswers(answersUser)).to eq("Resultado: 2/2")    
+        end
+        it "#Suspenso" do
+            answersUser = [2,1]
+            expect(@quiz1.checkAnswers(answersUser)).to eq("Resultado: 0/2") 
+        end
+    end
+    
 end
