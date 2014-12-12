@@ -4,7 +4,16 @@ require_relative "../lib/quiz.rb"
 describe Quiz do
     
     before :each do
-       
+       @quiz1 = Quiz.new("Cuestionario de LPP 05/12/2014") {
+            question '¿Cuántos argumentos de tipo bloque puede recibir un método?',
+                     right =>'1',
+                     wrong =>'2',
+                     wrong =>'muchos',
+                     wrong =>'los que defina el usuario'
+            question 'En Ruby los bloque son objetos que continen código',
+                    wrong =>'Cierto',
+                    right =>'Falso'
+       }
        
     end
     
@@ -22,6 +31,14 @@ describe Quiz do
           expect(newQuiz.questions.count).to eq(1)
        end
         
+    end
+    
+    describe "#Mostrar examen" do
+        it "#Mostrar preguntas y respuestas" do
+            cadena = "¿Cuántos argumentos de tipo bloque puede recibir un método?\n 1. 1\n 2. 2\n 3. muchos\n 4. los que defina el usuario\n"
+            cadena += "En Ruby los bloque son objetos que continen código\n 1. Cierto\n 2. Falso\n"
+            expect(@quiz1.to_s).to  eq(cadena)     
+        end
     end
     
 end

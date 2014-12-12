@@ -9,10 +9,10 @@ class Answer
       end
     
       def to_s
-        "#{@order} -  #{answer}"
+        "#{@order}. #{answer}"
       end
     
-      # predicate: decides if this is a right answer
+      # decides if this is a right answer
       def is_right?
         @kind == Quiz::RIGHT
       end

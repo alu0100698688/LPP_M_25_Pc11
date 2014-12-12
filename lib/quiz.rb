@@ -17,8 +17,7 @@ class Quiz
     def question(text,answers)
        q = Question.new(text,answers)
        @questions << q
-        
-        
+       @counter = 0 
     end
     
     
@@ -31,6 +30,16 @@ class Quiz
         @counter +=1
         [@counter, RIGHT]
     
+    end
+    
+    def to_s
+        
+        cadena = ""
+		@questions.each do |m,i| 
+       		cadena += "#{m}"
+      	end
+      	cadena
+  
     end
 
 
